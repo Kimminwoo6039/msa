@@ -16,6 +16,7 @@ public class EventLog {
 
     @Id
     @Column(name = "event_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long eventId;
 
     @ManyToOne
