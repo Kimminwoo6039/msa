@@ -1,4 +1,6 @@
 rootProject.name = 'msa'
+include 'msa-grpc-common'
+include 'msa-playback-service'
 include 'msa-discovery'
 include 'msa-course-service'
 include 'msa-user-service'
