@@ -1,0 +1,5 @@
+rootProject.name = 'msa'
+include 'msa-discovery'
+include 'msa-course-service'
+include 'msa-user-service'
+include 'msa-file-manage-service'
