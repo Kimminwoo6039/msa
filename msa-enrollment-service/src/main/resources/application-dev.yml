@@ -1,6 +1,6 @@
 spring:
   application:
-    name: msa-playback-service
+    name: msa-enrollment-service
 
   datasource:
     url: jdbc:mysql://183.111.67.163:3306/db?useSSL=false&allowPublicKeyRetrieval=true
@@ -30,9 +30,31 @@ eureka:
   client:
     service-url:
       defaultZone: http://msa-discovery:8000/eureka/
-    register-with-eureka: true
-    fetch-registry: true
+    registerWithEureka: true
+    fetchRegistry: true
 
-grpc:
-  server:
-    port: 9005
+#management:
+#  tracing:
+#    sampling:
+#      probability: 1.0
+#    propagation:
+#      consume: b3
+#      produce: b3_multi
+#  zipkin:
+#    tracing:
+#      endpoint: "http://next-campus-zipkin:9411/api/v2/spans"
+#  endpoints:
+#    web:
+#      exposure:
+#        include:
+#          - info
+#          - health
+#          - loggers
+#          - mappings
+#          - metrics
+#          - shutdown
+#          - prometheus
+
+logging:
+  pattern:
+    level: "%5p [%X{traceId:-},%X{spanId:-}]"
